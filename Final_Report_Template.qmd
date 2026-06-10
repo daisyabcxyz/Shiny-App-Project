@@ -1,0 +1,65 @@
+---
+title: "Final Project Report"
+author: "Daisy Nguyen"
+format: pdf
+---
+
+
+# App Features
+
+To be contributed as a group. Briefly write about
+
+* (1) your dataset and the questions you investigated,
+
+I looked at the LinkedIn Job Posting dataset that contains a comprehensive record of 6,328 job postings. The dataset includes professional labor market across different industries and locations in the United States, including job ranging from full-time to part-time jobs, from entry level to senior level. The data table consists of 15 columns that provide information on Job Identification & Roles, Employment Terms, Compensation Data, Geographic & Remote Flexibility, Engagement Metrics, and Organizational Context. These essentially contain necessary information in a compact format that one would like to know when looking for jobs. 
+
+As I studied the dataset with a point of view of a newly graduate from college, I was interested in the geographical distribution of jobs across the country as well as the distribution of job levels within a specific state. These information could help answer questions like where should one move to look for this type of job at this specific level? The other question I was trying to investigate is: how does wage/compensation vary across different job positions within a state? 
+
+* (2) the creative features of your app, what tools/features did you incorporate beyond our classwork, and
+
+The creative features of this app were incorporated mostly in phase 2. The app used the libraries that support geographical mapping to display the information in a more catchy and interactive visualization than a simple histogram graph. On the first tab, the users can learn about places that have more opening by simply basing off of the color scale of the map. States with more job opening appear as a dark blue color than states with fewer openings. In addition, when the users hover their mouse on top of any state, they can view the exact number of total opening of that state.
+
+On the second tab, rather than viewing the compensation distribution across multiple job positions solely from a single state, the users have the option to compare between their 2 interested states, making judgement directly from the graph. Also, there is a slide bar that allows the user to specify the compensation range of interest to look at. These features overall provide the convenience to see and compare things at once and to narrow their search to their interested compensation range, which could help the search more effective than a search in a denser graph.
+
+* (3) interesting/unexpected findings from your data analysis and app-building process.
+
+Some findings I found from my data analysis is that California has a lot more job openings compared to any other states inside the US. The number of openings in California is 1254, which almost triples the second highest state, New York, which has 458 openings. And across all the top 5 states with the most number of openings, a consistent trend was found: the top 2 number of openings in each state are the entry level and mid-senior level positions. 
+
+And of course, as expected, states with big cities have job positions across more fields than not so populated and popular states. Thus, on the second tab, if the user chooses to look at a big state like New York and California with any other state, they will find that the color of the columns is pretty dominated by the more popular state. 
+
+During the app-building process, I found that building things usually do not work on my first try, and so I find it very helpful to progress through each step at a time and have checkpoints where I would run the app to check if it is doing what I am expecting it to. If it does not work, it is easier to trace where the error is at each stage than to write the code for the entire app first and debug through the entire thing.
+
+
+
+\newpage
+
+
+# Reflection by Daisy
+
+To be written individually. Briefly explain
+
+* (1) your contributions to the project in both phases,
+
+In phase 1, I wrote the app by myself, from finding the dataset that I would be interested in, deciding what questions I wanted to investigate, to cleaning the dataset accordingly, to building the app step by step. The first phase of the app incorporated concepts I worked with in the practice exercises, so the tools were not new to me. It was more that I had all these tools, how do I organize and put them together into something that is useful.
+
+In phase 2, I first fixed the layout of the graph on the second tab according to Professor Chakraborty's suggestions (diagonal x-axis text and a more readable y-axis text). I also received suggestions from Professor Chakraborty to think about geographical mapping to display to states. I asked Gemini to "add geospatial data to have the app does interactive map" as my query and it provided me with a code that incorporated leaflet. It redid the layout of the app, moving plots side by side. However, its entire code was not running properly, and so I went over the lines that contained the code with leaflet and selected parts that I needed into my code. For the second tab, I asked AI what could be improved, and it took my code and expanded it with more interactive variables. It added the slide bar input to narrow down the range of search, and basically put 2 of my original graphs side-by-side so that the users can make comparisons between 2 states.
+
+* (2) how you have used the skills learned in class,
+
+The app is very compact but allows users to obtain a wide range of information, from job level distribution across all the US states, to the compensation range of all the available job types within a state, to the compensation based on the job level. This was done through the interactive and dynamic choice for the group_by variable in the first tab and the x-variable in the second tab. In class, we often dealt with clean/tidy datasets, and so a big part of creating this app is to figure out a way to tidy the dataset so that users can extract useful information from it. The originally imported dataset has the locations of jobs listed as a mixed of states and cities with states, and the compensation variable stored as a character type. Thus, I made use of functions like `str_extract`, `str_remove_all`, `as_numeric`, and `group_by` to process the data to extract the information I wanted to present.
+
+During the app-building process, I used the dashboard template from one of the class files and a lot of features from previous practice exercises, such as having drop-down inputs and dynamic x-variables. I also used concepts from my independent study last term to work with a dataset and extract specific information from it with functions like `group_by`, `filter`, `summarise`, and `count`.
+
+* (3) the challenges you faced and how you navigated them, and 
+
+Some of the challenges I faced was having the app not outputing the plot I intended to in the first place. It would throw me and error message. However, I navigated through this by writing small code chunks at a time and checking them before adding new stuff. By doing so, I could narrow down the code lines that I needed to debug and not be overwhelmed by the the error. When tidying the dataset, I also created a separated Rmd file for my data exploration. In this file, I could run the code easily and check the output to verify that I was getting what I expected. This was very helpful because for me, the output of the app was for the user and a lot of things running in the background can be hidden.
+
+* (4) your reflections on the AI-collaboration process (how did you use it - idea and code generation, or simply code generation? how was it helpful? what did it not do well? etc.)
+
+My experience with AI was that I started with asking AI to provide code for a specific task, and copying its entire code when the task was complex did not always work at the first try. And so I have to go into its code and find specific parts that look like what I need and copied that into my original code. It was helpful in providing the information that is entirely novel to me and giving me access to new tools, but it seems to provide code through trials and errors. I had to either go through the code myself or tell it that the code did not give the expected output to have it refined its answers. It was also helpful in providing comments to the code it wrote, providing explanations on how things work.
+
+<!-- Your goal should be to show that you have achieved a deep understanding and ease-of-use with the topics you learned in this class, and are ready to do more.   -->
+
+
+
+
